@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>私のウェブサイト</title>
+    <title>Colorful Candy World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tetris.css">
 </head>
 <body>
-    <h1>ようこそ！</h1>
-    <p>これは私の最初のウェブサイトです。</p>
+    <header>
+        <h1>Colorful Candy World</h1>
+    </header>
+    <main>
+        <section class="candy-showcase">
+            <!-- Candy items will be added here -->
+        </section>
+        <div id="tetris-container">
+            <h2>Play Tetris!</h2>
+            <button id="play-tetris-btn">Play Tetris</button>
+            <div id="score">Score: 0</div>
+            <canvas id="tetris" width="240" height="400"></canvas>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Colorful Candy World</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="tetris.js"></script>
 </body>
 </html>
