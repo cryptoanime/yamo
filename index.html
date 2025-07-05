@@ -1,31 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Candy World</title>
+    <title>えんとつ町のプペル ファンアート集</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="tetris.css">
 </head>
 <body>
-    <header>
-        <h1>Colorful Candy World</h1>
-    </header>
-    <main>
-        <section class="candy-showcase">
-            <!-- Candy items will be added here -->
-        </section>
-        <div id="tetris-container">
-            <h2>Play Tetris!</h2>
-            <button id="play-tetris-btn">Play Tetris</button>
-            <div id="score">Score: 0</div>
-            <canvas id="tetris" width="240" height="400"></canvas>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>CHIMNEY TOWN</h1>
+            <p>感動と興奮、そして夢の世界へようこそ</p>
+            <a href="#works" class="cta-button">作品を見る</a>
         </div>
+    </header>
+
+    <main>
+        <section id="works" class="works-section">
+            <h2>作品紹介</h2>
+            <div class="works-grid">
+                <div class="work-item">
+                    <img src="https://picsum.photos/seed/poupelle-movie/400/300" alt="えんとつ町のプペル">
+                    <h3>映画 えんとつ町のプペル</h3>
+                    <p>星を信じた少年とゴミ人間の、感動の冒険物語。</p>
+                </div>
+                <div class="work-item">
+                    <img src="https://picsum.photos/seed/bus-cinderella/400/300" alt="みにくいマルコ">
+                    <h3>みにくいマルコ</h3>
+                    <p>ひとりぼっちの怪物と、勇気ある少女の物語。</p>
+                </div>
+                <div class="work-item">
+                    <img src="https://picsum.photos/seed/zip-candy/400/300" alt="Zip & Candy">
+                    <h3>Zip & Candy</h3>
+                    <p>最新作！ロボットたちの愛と冒険の物語。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fan-art" class="fan-art-section">
+            <h2>ファンアートギャラリー</h2>
+            <div class="gallery">
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/poupelle1/400/300" alt="ファンアート作品 1">
+                    <figcaption>星を見上げるルビッチ</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/poupelle2/400/300" alt="ファンアート作品 2">
+                    <figcaption>ゴミ人間プペル</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/poupelle3/400/300" alt="ファンアート作品 3">
+                    <figcaption>えんとつ町の夜景</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/poupelle4/400/300" alt="ファンアート作品 4">
+                    <figcaption>スコップと冒険</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/poupelle5/400/300" alt="ファンアート作品 5">
+                    <figcaption>ふたりの約束</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/poupelle6/400/300" alt="ファンアート作品 6">
+                    <figcaption>ハロウィンの夜</figcaption>
+                </figure>
+            </div>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Colorful Candy World</p>
+        <p>&copy; 2025 CHIMNEY TOWN Fan Community. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
-    <script src="tetris.js"></script>
+
 </body>
 </html>

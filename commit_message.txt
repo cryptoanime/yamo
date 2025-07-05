@@ -1,1 +1,1 @@
-Add colorful candy website with Tetris game and animations.
+first commit

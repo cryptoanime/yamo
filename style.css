@@ -1,52 +1,170 @@
+/* General Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+    background-color: #121212; /* Darker background */
+    color: #e0e0e0;
     margin: 0;
-    background-color: #f0f0f0;
-}
-
-header {
-    background-color: #ff8c00;
-    color: white;
-    padding: 1rem;
+    padding: 0;
     text-align: center;
+    line-height: 1.6;
 }
 
-.candy-showcase {
+h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 8px #ffab00;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/chimneytown-bg/1920/1080') no-repeat center center/cover;
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem;
-}
-
-.candy-item {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 1rem;
-    padding: 1.5rem;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
     text-align: center;
-    width: 200px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+    padding: 0 1rem;
+    border-bottom: 8px solid #ffab00;
 }
 
-.candy-item:hover {
+.hero-content h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    text-shadow: 0 0 15px #ffab00, 0 0 25px #ffab00, 0 0 40px #ffab00, 0 0 60px #ffab00;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem;
+    animation: fadeInUp 1s ease-in-out 0.5s;
+    animation-fill-mode: backwards;
+}
+
+.cta-button {
+    font-size: 1.2rem;
+    color: #121212;
+    background-color: #ffab00;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    animation: fadeInUp 1s ease-in-out 1s;
+    animation-fill-mode: backwards;
+}
+
+.cta-button:hover {
+    background-color: #ffd65a;
+    transform: translateY(-5px);
+}
+
+/* Works Section */
+.works-section, .fan-art-section {
+    padding: 4rem 2rem;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.work-item {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-item:hover {
     transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(255, 171, 0, 0.25);
 }
 
-.candy-item:active {
-    box-shadow: 0 0 25px 10px rgba(255, 215, 0, 0.8); /* Gold glow on click */
+.work-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
 }
 
-.candy-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+.work-item h3 {
+    font-size: 1.5rem;
+    color: #ffab00;
+    margin: 1.5rem 0 0.5rem;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
+.work-item p {
+    padding: 0 1.5rem 1.5rem;
+    margin: 0;
+    color: #ccc;
+}
+
+/* Fan Art Gallery */
+.fan-art-section {
+    background-color: #1a1a2e;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background-color: #2a2a3e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #e0e0e0;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 171, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item figcaption {
     padding: 1rem;
-    margin-top: 2rem; /* Add some space above the footer */
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    padding: 2rem 1rem;
+    margin-top: 0; /* Removed margin-top */
+    background-color: #0f0c29;
+    border-top: 2px solid #302b63;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
