@@ -1,170 +1,250 @@
-/* General Styles */
+/* 基本的なスタイル */
 body {
-    font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
-    background-color: #121212; /* Darker background */
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ヘッダー */
+header {
+    background: #007bff;
+    color: white;
+    padding: 4rem 2rem;
     text-align: center;
-    line-height: 1.6;
+    border-bottom: 5px solid #0056b3;
 }
 
-h2 {
+header h1 {
     font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 8px #ffab00;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/chimneytown-bg/1920/1080') no-repeat center center/cover;
-    height: 100vh;
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background: white;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+/* カードレイアウト */
+.flex-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #f4f8ff;
+    padding: 2rem;
+    border-radius: 8px;
+    flex: 1;
+    border-left: 4px solid #007bff;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+/* 治療法リスト */
+#treatment ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: treatment-counter;
+}
+
+#treatment li {
+    position: relative;
+    padding: 1rem 1rem 1rem 3.5rem;
+    margin-bottom: 1rem;
+    background: #f4f8ff;
+    border-radius: 5px;
+}
+
+#treatment li::before {
+    counter-increment: treatment-counter;
+    content: counter(treatment-counter);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #007bff;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: #fff;
-    text-align: center;
-    padding: 0 1rem;
-    border-bottom: 8px solid #ffab00;
+    font-weight: bold;
 }
 
-.hero-content h1 {
-    font-size: 4.5rem;
-    margin: 0;
-    text-shadow: 0 0 15px #ffab00, 0 0 25px #ffab00, 0 0 40px #ffab00, 0 0 60px #ffab00;
-    animation: fadeInDown 1s ease-in-out;
+/* FAQ */
+.faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    margin: 1rem 0 2rem;
-    animation: fadeInUp 1s ease-in-out 0.5s;
-    animation-fill-mode: backwards;
-}
-
-.cta-button {
+.faq-question {
     font-size: 1.2rem;
-    color: #121212;
-    background-color: #ffab00;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
-    animation: fadeInUp 1s ease-in-out 1s;
-    animation-fill-mode: backwards;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px; /* アイコンスペース */
 }
 
-.cta-button:hover {
-    background-color: #ffd65a;
-    transform: translateY(-5px);
-}
-
-/* Works Section */
-.works-section, .fan-art-section {
-    padding: 4rem 2rem;
-}
-
-.works-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.work-item {
-    background-color: #1e1e1e;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.work-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(255, 171, 0, 0.25);
-}
-
-.work-item img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-}
-
-.work-item h3 {
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 1.5rem;
-    color: #ffab00;
-    margin: 1.5rem 0 0.5rem;
+    color: #007bff;
+    transition: transform 0.3s;
 }
 
-.work-item p {
-    padding: 0 1.5rem 1.5rem;
-    margin: 0;
-    color: #ccc;
+.faq-item.active .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
 }
 
-/* Fan Art Gallery */
-.fan-art-section {
-    background-color: #1a1a2e;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-item {
-    background-color: #2a2a3e;
-    border-radius: 10px;
+.faq-answer {
+    max-height: 0;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: #e0e0e0;
+    transition: max-height 0.5s ease-in-out;
+    padding-left: 1rem;
+    color: #555;
 }
 
-.gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(255, 171, 0, 0.2);
+/* ストレッチセクション */
+.stretch-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
+.stretch-box {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
 }
 
-.gallery-item figcaption {
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: bold;
+.stretch-box h4 {
+    font-size: 1.3rem;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
-/* Footer */
-footer {
-    padding: 2rem 1rem;
-    margin-top: 0; /* Removed margin-top */
-    background-color: #0f0c29;
-    border-top: 2px solid #302b63;
-    color: #aaa;
+.stretch-box p {
     font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
-/* Animations */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.stretch-item {
+    margin-bottom: 0.5rem;
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.stretch-item summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.8rem;
+    background: #e9ecef;
+    border-radius: 5px;
+    position: relative;
+    padding-right: 30px;
+}
+
+.stretch-item summary::after {
+    content: '▼';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.stretch-item[open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.stretch-item p {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    margin-top: -1px;
+    border: 1px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+    .stretch-container {
+        flex-direction: column;
+    }
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #333;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
 }
